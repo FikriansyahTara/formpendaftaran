@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Identitas</title>
+</head>
+<body>
+<div class="overlay">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post" class="box">
+<div class="header">
+<h4>Silahkan isi data anda!</h4>
+<p>Pastikan anda mengisi data pribadi anda dengan benar.</p></div>
+<div class="login-area">
+<input type="text" tittle="nama"  name= "nama" class="Nama" placeholder="Nama Anda">
+<input type="text" tittle="tempat" name="tempat" class="Tempat" placeholder="Tempat Lahir Anda">
+<input type="date" tittle="tanggal" name="tanggal" class="Tanggal" placeholder="Tanggal Lahir Anda">
+<input type="password" tittle="password" name="password" class="Password" class="Password" placeholder="Password">
+<input type="submit" value="Login" class="submit">
+<a href="#">Forgot Password?</a>
+</form>
+</div>
+</body>
+</html>
+<div class="php">
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama = $_POST['nama'];
+    $tempat = $_POST['tempat'];
+    
+    $tanggal = $_POST['tanggal'];
+    $password = $_POST['password'];
+    
+    echo "Nama: " . $nama . "<br>";
+    echo "Tempat: " . $tempat . "<br>";
+    echo "Tanggal: " . $tanggal . "<br>";
+    echo "Password: " . $password . "<br>";
+    
+}
+?>
+</div>
